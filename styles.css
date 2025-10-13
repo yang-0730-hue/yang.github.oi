@@ -1,0 +1,414 @@
+/* 全局樣式 */
+:root {
+    --dark-bg: #121212;
+    --dark-surface: #1e1e1e;
+    --primary: #bb86fc;
+    --secondary: #03dac6;
+    --accent: #cf6679;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-disabled: rgba(255, 255, 255, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--dark-bg);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* 頁面頂部和導航 */
+header {
+    background-color: rgba(18, 18, 18, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.logo p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--text-primary);
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* 主要橫幅 */
+.hero {
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease;
+}
+
+.hero .btn {
+    animation: fadeIn 1.5s ease;
+}
+
+/* 課程部分 */
+.courses {
+    background-color: var(--dark-surface);
+}
+
+.courses h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border-radius: 10px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.course-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary);
+    text-align: center;
+}
+
+.course-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.course-card p {
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-secondary);
+}
+
+.features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
+
+/* 得獎成就部分 */
+.awards {
+    background: linear-gradient(to right, #121212, #1a1a1a);
+}
+
+.awards h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+.awards-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.award-item {
+    display: flex;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.award-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.award-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.award-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.award-details p {
+    color: var(--text-secondary);
+}
+
+/* 聯絡我們部分 */
+.contact {
+    background-color: var(--dark-surface);
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border-radius: 10px;
+    min-width: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--secondary);
+}
+
+.contact-item p {
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* 頁腳 */
+footer {
+    background-color: #0a0a0a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    color: var(--text-disabled);
+    font-size: 0.9rem;
+}
+
+/* 動畫 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .award-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .award-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        width: 100%;
+    }
+}
+
+/* 修復Font Awesome無人機圖標 */
+.fa-drone:before {
+    content: "\f197"; /* 使用飛機圖標代替無人機 */
+}
