@@ -8,10 +8,10 @@ window.addEventListener('scroll', function() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-
+        
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-
+        
         if (targetElement) {
             window.scrollTo({
                 top: targetElement.offsetTop - 80,
@@ -49,4 +49,34 @@ courseCards.forEach(card => {
 
 awardItems.forEach(item => {
     observer.observe(item);
+});
+
+// 獎項下拉選單功能
+document.addEventListener('DOMContentLoaded', function() {
+    const awardToggles = document.querySelectorAll('.award-toggle');
+    
+    awardToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            // 獲取對應的下拉內容ID
+            const awardId = this.getAttribute('data-award');
+            const dropdown = document.getElementById(awardId);
+            
+            // 切換當前下拉選單的顯示狀態
+            this.classList.toggle('active');
+            dropdown.classList.toggle('active');
+            
+            // 關閉其他打開的下拉選單
+            awardToggles.forEach(otherToggle => {
+                if (otherToggle !== this) {
+                    const otherId = otherToggle.getAttribute('data-award');
+                    const otherDropdown = document.getElementById(otherId);
+                    
+                    if (otherToggle.classList.contains('active')) {
+                        otherToggle.classList.remove('active');
+                        otherDropdown.classList.remove('active');
+                    }
+                }
+            });
+        });
+    });
 });
