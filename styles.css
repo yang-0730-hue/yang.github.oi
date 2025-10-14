@@ -274,6 +274,159 @@ nav ul li a:hover::after {
     color: var(--text-secondary);
 }
 
+/* 獎項下拉選單樣式 */
+.award-toggle {
+    background-color: var(--primary);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.award-toggle i {
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.award-toggle:hover {
+    background-color: var(--secondary);
+}
+
+.award-toggle.active i {
+    transform: rotate(180deg);
+}
+
+.award-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin 0.5s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.award-dropdown.active {
+    max-height: 1000px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.award-dropdown-content {
+    background-color: rgba(40, 40, 40, 0.9);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.award-dropdown-content h4 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.award-dropdown-content ul {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.award-dropdown-content li {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.award-images {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.award-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.award-images img:hover {
+    transform: scale(1.05);
+}
+
+/* 獎項浮動視窗樣式 */
+.award-tooltip {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    width: 300px;
+    background-color: rgba(30, 30, 30, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 0;
+    z-index: 100;
+    transform: translateY(10px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    pointer-events: none;
+    left: 50%;
+    margin-left: -150px;
+    top: 100%;
+}
+
+.award-item {
+    position: relative;
+}
+
+.award-item:hover .award-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tooltip-content {
+    padding: 15px;
+}
+
+.tooltip-content h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.tooltip-content p {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.tooltip-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 0 0 8px 8px;
+    margin-top: 10px;
+}
+
+.tooltip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.award-tooltip:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(30, 30, 30, 0.95) transparent;
+}
+
 /* 聯絡我們部分 */
 .contact {
     background-color: var(--dark-surface);
@@ -366,43 +519,43 @@ footer p {
     header .container {
         flex-direction: column;
     }
-
+    
     nav ul {
         margin-top: 20px;
     }
-
+    
     nav ul li {
         margin: 0 10px;
     }
-
+    
     .hero h1 {
         font-size: 2.5rem;
     }
-
+    
     .hero p {
         font-size: 1rem;
     }
-
+    
     .course-grid {
         grid-template-columns: 1fr;
     }
-
+    
     .award-item {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-
+    
     .award-icon {
         margin-right: 0;
         margin-bottom: 20px;
     }
-
+    
     .contact-info {
         flex-direction: column;
         align-items: center;
     }
-
+    
     .contact-item {
         width: 100%;
     }
