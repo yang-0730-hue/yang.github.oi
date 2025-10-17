@@ -130,7 +130,7 @@ nav ul li a:hover::after {
 
 /* 主要橫幅 */
 .hero {
-    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('ps/LINE_ALBUM_20231118_251016_1.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('ps/46456.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
