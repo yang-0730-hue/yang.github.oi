@@ -10,6 +10,7 @@
     --text-disabled: rgba(255, 255, 255, 0.5);
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -129,7 +130,7 @@ nav ul li a:hover::after {
 
 /* 主要橫幅 */
 .hero {
-    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1581092921461-39b9d08a9b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -519,43 +520,43 @@ footer p {
     header .container {
         flex-direction: column;
     }
-    
+
     nav ul {
         margin-top: 20px;
     }
-    
+
     nav ul li {
         margin: 0 10px;
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .course-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .award-item {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-    
+
     .award-icon {
         margin-right: 0;
         margin-bottom: 20px;
     }
-    
+
     .contact-info {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .contact-item {
         width: 100%;
     }
